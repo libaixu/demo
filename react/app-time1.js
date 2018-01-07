@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 
 // 设置静态目录
-app.use( express.static('react-demo') );
+app.use( express.static('react') );
 
 
 app.listen(6666,function(){
