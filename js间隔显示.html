@@ -1,0 +1,30 @@
+<html>
+<title>js间隔显示--0608</title>
+<meta charset='utf-8' />
+<style type="text/css">
+.xx{
+	width:100px;height:20;background:#f00;margin:10px;display: none;
+}
+</style>
+<body>
+	<div class="xx">0</div>
+	<div class="xx">1</div>
+	<div class="xx">2</div>
+	<div class="xx">3</div>
+	<div class="xx">4</div>
+</body>
+</html>
+<script type="text/javascript">
+	var _xx = document.getElementsByClassName('xx');
+	// console.log( _xx );
+	// console.log( _xx.length );
+	var j = -1;
+
+	for( var i=0; i<_xx.length; i++ ){
+		setTimeout(function(){
+			j++;
+			_xx[j].style.display = 'block';
+		},1000 * i);
+		console.log(i);
+	}
+</script>

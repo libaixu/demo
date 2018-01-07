@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>111</title>
+	<style type="text/css">
+		.circle{
+			width: 0; height: 600px;
+			border-left: 300px solid black;
+			border-right: 300px solid white;
+			margin: auto;
+			border-radius: 50%;
+			box-shadow: 0 0 20px;
+			-webkit-animation:rotation 3s linear infinite;
+			-moz-animation:rotation 3s linear infinite;
+			-o-animation:rotation 3s linear infinite;
+			animation:rotation 3s linear infinite;
+		}
+		.circle:before{
+			display: block;content: " ";
+			width: 300px;height: 300px;position: relative;top: 0;left: -150px;
+			z-index: 1;
+			background-color: white;border-radius: 50%;
+			box-shadow: 0 300px 0 black;
+		}
+		.circle:after{
+			display: block;content: " ";
+			width: 100px;height: 100px;position: relative;top: -200px;left: -50px;
+			z-index: 2;
+			background-color: black;border-radius: 50%;
+			box-shadow: 0 300px 0 white;
+		}
+		@keyframes rotation{
+			0% {transform:rotate(0deg);}
+			100% {transform:rotate(-360deg);}
+		}
+		@-webkit-keyframes rotation{
+		    0% {transform:rotate(0deg);}
+		    100% {transform:rotate(-360deg);}
+		}
+		@-moz-keyframes rotation{
+		    0% {transform:rotate(0deg);}
+		    100% {transform:rotate(-360deg);}
+		}
+		@-o-keyframes rotation{
+		    0% {transform:rotate(0deg);}
+		    100% {transform:rotate(-360deg);}
+		}
+	</style>
+</head>
+<body>
+	<div class="circle"></div>
+</body>
+</html>
