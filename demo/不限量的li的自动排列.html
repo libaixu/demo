@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+.box {
+    width:500px;
+    height:500px;
+    background:#eee;
+    position:relative;
+    margin:30px auto;
+}
+.box li {
+    width:30px;
+    height:30px;
+    background:#666;
+    position:absolute;
+    top:300px;
+    left:250px; list-style:none;color:#fff; text-align:center; line-height:30px;
+}
+.box label{width:30px;height:30px;display:block; background:#ddd;color:#333; line-height:30px; text-align:center; position:absolute; top:350px;left:250px; cursor:pointer; font-size:12px;}
+.box label:hover{ background:#999;}
+</style>
+
+</head>
+
+<body>
+<div class="box" id="boxId">
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+        <li>11</li>
+        <li>12</li>
+        <li>13</li>
+    </ul>
+    <label id="btnId">btn</label>
+</div>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" >
+    var _li     = $('#boxId').find('li');
+    var _length = _li.length;
+    var _time;
+    
+    var row = 0,col = 0,count = 0,num = 0;
+
+    var col = Math.floor( _length/3 );
+    $('#btnId').on('click',function(){
+        _time = setInterval(function(){
+            count++;
+            row = Math.ceil( count / col );
+            move( num, row );
+            num++;
+            if( count > 13 ){
+                clearInterval( _time );
+            }
+        },100);
+    });
+
+    function move( num, row ){
+        var _left = (num % col) * 50 + 'px';
+        _li.eq(num).stop().animate({
+            'left' : _left,
+            'top'  : ( row - 1 ) * 50 + 'px'
+        });
+    }
+
+</script>
