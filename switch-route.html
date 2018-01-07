@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>123</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		div{
+			margin:20px;cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+
+<div id="qq" data-url="qq">腾讯</div>
+<div id="youk" data-url="youk">优酷</div>
+<div id="sina" data-url="sina">新浪</div>
+
+</body>
+</html>
+	
+<script type="text/javascript">
+	function getId(n){
+		return document.getElementById(n);
+	}
+	getId('qq').onclick = function(){
+		var n = this.getAttribute( 'data-url' );
+		console.log(n);
+		route(n);
+	}
+	getId('youk').onclick = function(){
+		var n = this.getAttribute( 'data-url' );
+		route(n);
+	}
+	getId('sina').onclick = function(){
+		var n = this.getAttribute( 'data-url' );
+		route(n);
+	}
+	function route(n){
+		switch(n){
+			case 'qq':
+				location.href = 'http://www.qq.com/';
+				break;
+			case 'youk':
+				location.href = 'http://www.youku.com/';
+				break;
+			case 'sina':
+				location.href = 'http://www.sina.com.cn/';
+				break;
+		}
+	}
+
+</script>

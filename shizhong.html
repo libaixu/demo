@@ -1,0 +1,25 @@
+<meta charset="utf-8"/>
+<div id="timeer" style="margin:0 auto;background: #f00;width: 300px;height: 100px;line-height: 100px;text-align: center;font-size: 50px;">
+	
+</div>
+<script type="text/javascript">
+	function getTime(){
+		var _d = new Date();
+		var _h = _d.getHours();
+		var _m = _d.getMinutes();
+		var _s = _d.getSeconds();
+
+		_m = check( _m );
+		_s = check( _s );
+		setTimeout(getTime, 1000);
+		document.getElementById('timeer').innerHTML = _h + ':' + _m + ':' + _s;
+	}
+
+	function check(i){
+		if( i < 10 ){
+			i = '0' + i
+		}
+		return i;
+	}
+	getTime();
+</script>
