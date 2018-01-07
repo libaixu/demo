@@ -93,7 +93,7 @@ var TimeUl = React.createClass({
 		setInterval(function(){
 			var date  = new Date();
 			var year  = date.getFullYear();
-			var date2 = new Date( 2018,1,15 );
+			var date2 = new Date( 2019,0,7 );
 			var time  = ( date2-date )/1000;
 
 			var day   = Math.floor( time / (24 * 60 * 60) );
