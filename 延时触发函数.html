@@ -1,0 +1,17 @@
+<script type="text/javascript">
+	var Obj = function(xx){
+		this.msg = xx;
+		this.shout = function(){
+			alert('this.mag');
+		}
+		this.wait = function(){
+			var _self = this;
+			function temp(){
+				_self.shout();
+			}
+			setTimeout(temp,2000);
+		}
+	}
+	var aa = new Obj('123');
+	aa.wait();
+</script>
